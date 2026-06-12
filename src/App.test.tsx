@@ -21,6 +21,7 @@ describe('App', () => {
     render(<App />)
     expect(screen.getByRole('region', { name: /introduction/i })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: /skills/i })).toBeInTheDocument()
+    expect(screen.getByRole('region', { name: /certifications/i })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: /experience/i })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: /projects/i })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: /contact/i })).toBeInTheDocument()

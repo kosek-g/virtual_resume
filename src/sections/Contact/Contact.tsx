@@ -12,13 +12,8 @@ export default function Contact({ personal }: ContactProps) {
   return (
     <section id="contact" className={styles.section} aria-label="Contact">
       <div className={styles.inner}>
-        <SectionTitle index="04" title="Contact" />
+        <SectionTitle index="05" title="Contact" />
         <div className={styles.body}>
-          <p className={styles.intro}>
-            Open to interesting opportunities, collaborations and conversations.
-            The best way to reach me is via email.
-          </p>
-
           <ul className={styles.links} role="list">
             <li>
               <a href={`mailto:${email}`} className={styles.contactLink}>

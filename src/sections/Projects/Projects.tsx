@@ -10,7 +10,7 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <section id="projects" className={styles.section} aria-label="Projects">
       <div className={styles.inner}>
-        <SectionTitle index="03" title="Projects" />
+        <SectionTitle index="04" title="Projects" />
         <ul className={styles.grid} role="list">
           {projects.map((project) => (
             <li key={project.id} className={styles.card}>

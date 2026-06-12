@@ -6,11 +6,12 @@ interface NavigationProps {
 }
 
 const NAV_LINKS = [
-  { label: 'About',      href: '#about' },
-  { label: 'Skills',     href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects',   href: '#projects' },
-  { label: 'Contact',    href: '#contact' },
+  { label: 'About',           href: '#about' },
+  { label: 'Skills',          href: '#skills' },
+  { label: 'Experience',      href: '#experience' },
+  { label: 'Certifications',  href: '#certifications' },
+  { label: 'Projects',        href: '#projects' },
+  { label: 'Contact',         href: '#contact' },
 ] as const
 
 export default function Navigation({ isOpen, onClose }: NavigationProps) {

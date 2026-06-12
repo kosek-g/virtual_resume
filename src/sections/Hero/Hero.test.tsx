@@ -30,10 +30,10 @@ describe('Hero', () => {
     expect(screen.getByText('Building great software.')).toBeInTheDocument()
   })
 
-  it('renders View Projects link pointing to #projects', () => {
+  it('renders View my experience link pointing to #experience', () => {
     render(<Hero personal={mockPersonal} />)
-    const link = screen.getByRole('link', { name: /view projects/i })
-    expect(link).toHaveAttribute('href', '#projects')
+    const link = screen.getByRole('link', { name: /view my experience/i })
+    expect(link).toHaveAttribute('href', '#experience')
   })
 
   it('renders GitHub link when provided', () => {

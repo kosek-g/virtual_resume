@@ -22,8 +22,8 @@ export default function Hero({ personal }: HeroProps) {
         <p className={styles.tagline}>{tagline}</p>
 
         <div className={styles.actions}>
-          <a href="#projects" className={styles.btnPrimary}>
-            View Projects
+          <a href="#experience" className={styles.btnPrimary}>
+            View my experience
           </a>
           <a href="#contact" className={styles.btnSecondary}>
             Get in Touch

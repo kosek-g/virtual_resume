@@ -3,14 +3,21 @@ export interface SkillCategory {
   skills: string[]
 }
 
+export interface RoleEntry {
+  title: string
+  period?: string
+  context?: string
+  description: string[]
+  technologies: string[]
+}
+
 export interface ExperienceItem {
   id: string
   company: string
-  role: string
   period: string
   location: string
-  description: string[]
-  technologies: string[]
+  positions: string[]
+  roles: RoleEntry[]
 }
 
 export interface ProjectItem {
@@ -28,14 +35,23 @@ export interface PersonalInfo {
   title: string
   tagline: string
   email: string
+  phone?: string
   github?: string
   linkedin?: string
   location: string
 }
 
+export interface CertificationItem {
+  id: string
+  name: string
+  issuer: string
+  date: string
+}
+
 export interface ResumeData {
   personal: PersonalInfo
   skills: SkillCategory[]
+  certifications: CertificationItem[]
   experience: ExperienceItem[]
   projects: ProjectItem[]
 }

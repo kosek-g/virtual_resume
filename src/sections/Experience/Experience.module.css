@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding) 0;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-subtle);
 }
 
 .inner {
@@ -12,29 +12,116 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 24px;
 }
 
-.item {
+/* ── Company block ───────────────────────────────────────────── */
+.companyBlock {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.companyHeader {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 0 48px;
-  padding: 40px 0;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 8px 24px;
+  padding: 24px 28px;
   border-bottom: 1px solid var(--color-border);
 }
 
-.item:first-child {
-  border-top: 1px solid var(--color-border);
-}
-
-.meta {
+.companyLeft {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding-top: 2px;
+  gap: 10px;
 }
 
-.company {
+.companyName {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+}
+
+.positions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.positionEntry {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  padding-left: 12px;
+  position: relative;
+}
+
+.positionEntry::before {
+  content: '//';
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-border-strong);
+}
+
+.companyMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.companyPeriod {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.companyLocation {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Roles list ──────────────────────────────────────────────── */
+.rolesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.roleItem {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.roleItem:last-child {
+  border-bottom: none;
+}
+
+.roleHeader {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.roleBullet {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.roleTitle {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 600;
@@ -42,44 +129,36 @@
   letter-spacing: 0.01em;
 }
 
-.period {
+.roleContext {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
 }
 
-.location {
+.rolePeriod {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.role {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-text);
-  margin-bottom: 4px;
+  margin-left: auto;
 }
 
 .description {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  padding-left: 20px;
+  margin-bottom: 14px;
 }
 
 .descItem {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
   line-height: 1.65;
-  padding-left: 16px;
   position: relative;
 }
 
@@ -87,31 +166,40 @@
   content: '>';
   font-family: var(--font-mono);
   position: absolute;
-  left: 0;
+  left: -16px;
   color: var(--color-text-muted);
-  font-size: 0.75rem;
-  top: 2px;
+  font-size: 0.72rem;
+  top: 3px;
 }
 
 .techList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
+  padding-left: 20px;
 }
 
 .techTag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--color-text-muted);
-  padding: 3px 8px;
+  padding: 2px 8px;
   border: 1px solid var(--color-border);
   letter-spacing: 0.04em;
   background-color: var(--color-bg-subtle);
 }
 
-@media (max-width: 720px) {
-  .item {
+@media (max-width: 640px) {
+  .companyHeader {
     grid-template-columns: 1fr;
-    gap: 16px;
+  }
+
+  .companyMeta {
+    align-items: flex-start;
+  }
+
+  .rolePeriod {
+    margin-left: 0;
+    width: 100%;
   }
 }

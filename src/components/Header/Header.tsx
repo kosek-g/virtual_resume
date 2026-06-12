@@ -12,7 +12,7 @@ export default function Header() {
     <header className={styles.header} role="banner">
       <div className={styles.inner}>
         <a href="#hero" className={styles.brand} aria-label="Go to top">
-          <img src="/logo2.png" alt="Logo" className={styles.logo} />
+          <img src="/logo3.png" alt="Logo" className={styles.logo} />
           <span className={styles.brandName}>resume.dev</span>
         </a>
 
