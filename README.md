@@ -2,7 +2,7 @@
 
 A personal online resume built as a single-page React application. Responsive, accessible, dark-themed, and deployed to Cloudflare Pages.
 
-**Live site:** https://virtual-resume.pages.dev
+**Live site:** https://451e44ec.gk-resume.pages.dev
 
 ---
 
@@ -105,7 +105,7 @@ The project is deployed to **Cloudflare Pages** via Git integration.
 
 | Branch | Environment |
 |---|---|
-| `main` | Production (https://virtual-resume.pages.dev) |
+| `main` | Production (https://451e44ec.gk-resume.pages.dev) |
 | any other | Preview deployment (auto-generated URL) |
 
 Every push to `main` or `dev`, and every PR to `main`, triggers the GitHub Actions CI pipeline (`.github/workflows/ci.yml`) which runs:
