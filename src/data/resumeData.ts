@@ -16,7 +16,7 @@ export const resumeData: ResumeData = {
   skills: [
     {
       category: 'Languages',
-      skills: ['Python', 'PySpark', 'SQL', 'Bash'],
+      skills: ['Python', 'PySpark', 'SQL', 'Bash', 'Rust (basic)'],
     },
     {
       category: 'Cloud & Infra',
@@ -51,6 +51,18 @@ export const resumeData: ResumeData = {
     },
   ],
   certifications: [
+    {
+      id: 'cert-claude-foundations',
+      name: 'Claude Certified Developer \u2013 Foundations (CCDV-F)',
+      issuer: 'Anthropic',
+      date: 'November 2026',
+    },
+    {
+      id: 'cert-github-copilot',
+      name: 'GitHub Copilot',
+      issuer: 'GitHub',
+      date: 'July 2026',
+    },
     {
       id: 'cert-devops-expert',
       name: 'DevOps Engineer Expert',
@@ -109,11 +121,14 @@ export const resumeData: ResumeData = {
           title: 'Data Engineer',
           context: 'Manufacture industry',
           description: [
-            'Engineered a cloud-native Data Platform on Azure, leveraging Databricks and Delta Lake to enforce the Medallion Architecture.',
-            'Developed and managed data pipelines for ingestion and transformation with comprehensive unit testing and automated integration tests.',
-            'Led infrastructure delivery for a data governance migration from Microsoft Purview to Open Metadata using AKS, Terraform and Helm.',
+            'Built the HR data platform on Databricks using Asset Bundles and dbt, with a layered pipeline from raw files to a unified silver model, covering payroll and vacation data for 18 country feeds.',
+            'Wrote a PySpark ingestion engine that loads Excel and CSV files into Unity Catalog, handles schemas that change over time, and records where and when each file was loaded.',
+            'Built the dbt layer: history-tracking snapshots, bronze views and an incremental silver model that unifies all countries, with data contracts and data-quality and unit tests.',
+            'Set up CI/CD in Azure DevOps for all environments, with automated tests and failure alerts, and led the two-wave HR go-live.',
+            "Extended the platform to other domains and built an AI coding agent that applies the platform's standards and speeds up onboarding of new projects and development in general.",
+            'Helped with the migration of a data governance tool from Microsoft Purview to Open Metadata, using Azure Kubernetes Services.',
           ],
-          technologies: ['Python', 'PySpark', 'Databricks', 'Delta Lake', 'Azure', 'Terraform', 'Kubernetes'],
+          technologies: ['Python', 'PySpark', 'Databricks Asset Bundles', 'dbt', 'Unity Catalog', 'Azure DevOps', 'Azure Kubernetes Services'],
         },
         {
           title: 'AI Engineer',
@@ -249,6 +264,30 @@ export const resumeData: ResumeData = {
         'An interactive online resume built as a single-page React application.',
       technologies: ['React 19', 'TypeScript', 'Vite', 'CSS Modules', 'Vitest', 'Cloudflare Pages'],
       github: 'https://github.com/kosek-g/virtual_resume',
+    },
+    {
+      id: 'proj-4',
+      name: 'Chinese Flashcards',
+      description:
+        'A minimal flashcard app for learning Chinese, built for my own study routine. Runs on Cloudflare: a Worker serves the React SPA and a small JSON API backed by a D1 database, so the same word list is available on every device, including mobile.',
+      technologies: ['React 19', 'TypeScript', 'Vite', 'CSS Modules', 'Vitest', 'Cloudflare Pages'],
+      github: 'https://github.com/kosek-g/chinese_flashcards',
+    },
+    {
+      id: 'proj-5',
+      name: 'Rust CSV Validator',
+      description:
+        'A Rust CLI for validating local or Azure Data Lake Storage Gen2 CSV files against configurable YAML data-quality rules, with human-readable, JSON, and summary reports.',
+      technologies: ['Rust', 'CSV', 'Azure Data Lake Storage Gen2', 'YAML', 'GitHub Actions'],
+      github: 'https://github.com/kosek-g/rust_csv_validator',
+    },
+    {
+      id: 'proj-6',
+      name: 'DB Extractor',
+      description:
+        'A full-stack application for connecting to PostgreSQL, MySQL, and Azure SQL databases, exporting tables to Apache Parquet, and uploading the files to Azure Blob Storage.',
+      technologies: ['Rust', 'React', 'TypeScript', 'Axum', 'Apache Parquet', 'Azure Blob Storage'],
+      github: 'https://github.com/kosek-g/rust_db_extractor',
     },
   ],
 }
